@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Usuarios - Admin{% endblock %}
+{% block main_class %}container-main{% endblock %}
+{% block content %}
+<div class="text-center mb-4">
+    <h2>Usuarios Registrados</h2>
+    <p class="text-muted">Listado completo de registros</p>
+</div>
+<div class="card">
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre Padre</th>
+                    <th>Nombre Estudiante</th>
+                    <th>Nombre Hija</th>
+                    <th>Email</th>
+                    <th>Curso</th>
+                    <th>Promoción</th>
+                    <th>Admin</th>
+                    <th>Registro</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in usuarios %}
+                <tr>
+                    <td>{{ u.id }}</td>
+                    <td>{{ u.nombre_padre }}</td>
+                    <td>{{ u.nombre_estudiante }}</td>
+                    <td>{{ u.nombre_hija or '-' }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.curso }}</td>
+                    <td>{{ u.promocion }}</td>
+                    <td>{{ 'Sí' if u.es_admin else 'No' }}</td>
+                    <td>{{ u.fecha_registro }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

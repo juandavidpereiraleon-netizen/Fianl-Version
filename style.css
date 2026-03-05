@@ -1,0 +1,317 @@
+/* Colores principales */
+:root {
+    --color-azul: #002147;
+    --color-azul-oscuro: #001530;
+    --color-verde-militar: #006400;
+    --color-verde-militar-oscuro: #004b00;
+    --color-blanco: #FFFFFF;
+    --color-gris-claro: #f8f9fa;
+    --color-gris: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-blanco);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar personalizado */
+.navbar.bg-primary {
+    background-color: var(--color-azul) !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Botones */
+.btn-primary {
+    background-color: var(--color-azul);
+    border-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-azul-oscuro);
+    border-color: var(--color-azul-oscuro);
+}
+
+.btn-success {
+    background-color: var(--color-verde-militar);
+    border-color: var(--color-verde-militar);
+    color: var(--color-blanco);
+}
+
+.btn-success:hover {
+    background-color: var(--color-verde-militar-oscuro);
+    border-color: var(--color-verde-militar-oscuro);
+}
+
+.btn-secondary {
+    background-color: var(--color-verde-militar);
+    border-color: var(--color-verde-militar);
+    color: var(--color-blanco);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-verde-militar-oscuro);
+    border-color: var(--color-verde-militar-oscuro);
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 20px;
+    background-color: var(--color-blanco);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(149, 157, 165, 0.24) 0px 12px 28px;
+}
+
+.card-header {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+    font-weight: bold;
+}
+
+/* Formularios */
+.form-control:focus {
+    border-color: var(--color-azul);
+    box-shadow: 0 0 0 0.2rem rgba(51, 102, 204, 0.25);
+}
+
+.form-select:focus {
+    border-color: var(--color-azul);
+    box-shadow: 0 0 0 0.2rem rgba(51, 102, 204, 0.25);
+}
+
+/* Progress bars */
+.progress {
+    height: 16px;
+    background-color: #e9ecef;
+    border-radius: 999px;
+}
+
+.progress-bar {
+    background-color: var(--color-verde-militar);
+    border-radius: 999px;
+}
+
+/* Tablas */
+.table thead {
+    background-color: var(--color-azul);
+    color: var(--color-blanco);
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(51, 102, 204, 0.1);
+}
+
+/* Alertas */
+.alert {
+    border-radius: 16px;
+}
+
+/* Página principal */
+.hero-section {
+    background: linear-gradient(135deg, var(--color-azul) 0%, var(--color-azul-oscuro) 100%);
+    color: var(--color-blanco);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Contenedor principal */
+.container-main {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Cards de metas */
+.meta-card {
+    border-left: none;
+    transition: all 0.3s;
+}
+
+.meta-card:hover {
+    border-left-width: 6px;
+}
+
+.meta-progress {
+    margin-top: 1rem;
+}
+
+/* Dropdown menu cleanup */
+.dropdown-menu .dropdown-item {
+    padding: 10px 16px;
+    font-family: 'Inter', 'Lexend', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(0,0,0,0.06);
+}
+.navbar .nav-link.dropdown-toggle {
+    padding: 8px 12px;
+}
+.navbar .nav-link.dropdown-toggle::after {
+    display: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-azul) !important;
+    margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Utilidades */
+.text-primary-custom {
+    color: var(--color-azul) !important;
+}
+
+.bg-primary-custom {
+    background-color: var(--color-azul) !important;
+}
+
+.bg-success-custom {
+    background-color: var(--color-verde-militar) !important;
+}
+
+/* Badges */
+.badge-primary {
+    background-color: var(--color-azul);
+}
+
+.badge-success {
+    background-color: var(--color-verde-militar);
+}
+
+/* Auth forms */
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.auth-card {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.auth-card .card {
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: visible;
+}
+@media (min-width: 576px) {
+    .auth-card .card {
+        min-width: 500px;
+    }
+}
+@media (min-width: 768px) {
+    .auth-card {
+        width: 80%;
+        max-width: 720px;
+    }
+}
+.card-header h3 {
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+}
+.card-header {
+    width: 100%;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media (max-width: 992px) {
+    .card-header h3 {
+        font-size: 1.25rem;
+    }
+}
+
+.wide-card {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}
+
+.price-row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.price-row .card {
+    min-width: 360px;
+}
+
+.card .btn {
+    width: auto;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .wide-card {
+        width: 90%;
+        max-width: 95%;
+    }
+    .price-row {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    .price-row .card {
+        min-width: 240px;
+    }
+}

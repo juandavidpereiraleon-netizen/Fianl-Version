@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Metafiance - Inicio{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1>Metafiance</h1>
+        <p class="lead">Dios provee, yo administro</p>
+        <div class="mt-4">
+            <a href="{{ url_for('login') }}" class="btn btn-light btn-lg me-3">Iniciar Sesión</a>
+            <a href="{{ url_for('register') }}" class="btn btn-outline-light btn-lg">Registrarse</a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">Gestión de Metas</h5>
+                    <p class="card-text">Administra tus metas financieras de manera eficiente y organizada.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">Seguimiento de Ahorros</h5>
+                    <p class="card-text">Registra tus ahorros y salidas para mantener un control preciso.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">Reportes Detallados</h5>
+                    <p class="card-text">Visualiza el progreso de tus metas con reportes y gráficos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

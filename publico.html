@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Metafiance - Información Pública{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="hero-section">
+    <div class="container">
+        <h1>Metafiance</h1>
+        <p class="lead">Sistema de Gestión de Metas Financieras</p>
+        <p class="mb-4">Dios provee, yo administro</p>
+        <div class="mt-4">
+            <a href="{{ url_for('register') }}" class="btn btn-light btn-lg me-3">Registrarse</a>
+            <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg">Iniciar Sesión</a>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <h2>¿Qué es Metafiance?</h2>
+            <p class="lead">Una plataforma diseñada para ayudar a estudiantes y sus familias a gestionar y alcanzar sus metas financieras educativas.</p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+                            <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+                            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/>
+                            <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+                        </svg>
+                    </h5>
+                    <h5 class="card-title mt-3">Gestión de Metas</h5>
+                    <p class="card-text">Define y gestiona tus metas financieras de manera organizada y eficiente.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-piggy-bank" viewBox="0 0 16 16">
+                            <path d="M5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.138-1.496A6 6 0 0 1 7.964 2.75c.957 0 1.652.776 1.652 1.616 0 .858-.795 1.704-1.753 1.704-.978 0-1.264-.44-1.45-.43l-.11.44c-.1.4-.338.772-.564 1.097.13.112.266.217.396.315l.18.12c.11.072.203.132.283.18.102.062.196.11.283.14V9h1.5v-.639c.258-.123.5-.29.707-.5.24-.22.407-.468.519-.72q.085-.18.12-.37h.823c.121 0 .202-.12.165-.258a7 7 0 0 0-13.291-.273.25.25 0 0 0 .164.277zm.66 1.157-.214-.214.214.214zm.214.214.214.214-.214-.214z"/>
+                        </svg>
+                    </h5>
+                    <h5 class="card-title mt-3">Seguimiento de Ahorros</h5>
+                    <p class="card-text">Registra tus ahorros y salidas para mantener un control preciso de tus finanzas.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card text-center h-100">
+                <div class="card-body">
+                    <h5 class="card-title text-primary-custom">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm14.817 3.113a.5.5 0 0 1 .07.704l-4.5 5.5a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61 4.15-5.073a.5.5 0 0 1 .704-.07"/>
+                        </svg>
+                    </h5>
+                    <h5 class="card-title mt-3">Reportes Detallados</h5>
+                    <p class="card-text">Visualiza el progreso de tus metas con reportes y gráficos en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">Estadísticas del Sistema</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <h3 class="text-primary-custom">{{ total_metas }}</h3>
+                            <p class="text-muted">Metas Activas</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="text-success">100%</h3>
+                            <p class="text-muted">Gratuito</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="text-primary-custom">24/7</h3>
+                            <p class="text-muted">Disponible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">¿Cómo funciona?</h4>
+                    <ol>
+                        <li class="mb-2"><strong>Regístrate:</strong> Crea tu cuenta de forma gratuita</li>
+                        <li class="mb-2"><strong>Define tus metas:</strong> Establece las metas financieras que deseas alcanzar</li>
+                        <li class="mb-2"><strong>Registra tus movimientos:</strong> Anota tus ahorros y gastos relacionados</li>
+                        <li class="mb-2"><strong>Monitorea tu progreso:</strong> Visualiza cómo avanzas hacia tus objetivos</li>
+                        <li><strong>¡Alcanza tus metas!</strong> Logra tus objetivos financieros de manera organizada</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
