@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}Registros - Admin{% endblock %}
+{% block main_class %}container-main{% endblock %}
+{% block content %}
+<div class="text-center mb-4">
+    <h2>Registros Globales</h2>
+    <p class="text-muted">Ahorros y Salidas de todos los usuarios</p>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Ahorros</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Meta</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for a in registros.ahorros %}
+                        <tr>
+                            <td>{{ a.id }}</td>
+                            <td>{{ a.usuario_id }}</td>
+                            <td>{{ a.meta_id }}</td>
+                            <td>${{ a.monto|money }}</td>
+                            <td>{{ a.fecha }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header text-center">
+                <h5>Salidas</h5>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Usuario</th>
+                            <th>Meta</th>
+                            <th>Monto</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for s in registros.salidas %}
+                        <tr>
+                            <td>{{ s.id }}</td>
+                            <td>{{ s.usuario_id }}</td>
+                            <td>{{ s.meta_id }}</td>
+                            <td>${{ s.monto|money }}</td>
+                            <td>{{ s.fecha }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

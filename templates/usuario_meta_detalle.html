@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Detalle de Meta - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card wide-card">
+            <div class="card-header text-center">
+                <h3 class="no-wrap">{{ meta.nombre }}</h3>
+            </div>
+            <div class="card-body">
+                <div class="text-center mb-4">
+                    <p class="text-muted">Fecha límite: {{ meta.fecha_limite }}</p>
+                    <p class="text-muted no-wrap">Costo: ${{ meta.costo_estimado|money }} ({{ "%.1f"|format(progreso) }}%)</p>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: {{ progreso }}%"></div>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('usuario_registrar_ahorro', meta_id=meta.id) }}" class="btn btn-primary">Registrar Ahorro</a>
+                    <a href="{{ url_for('usuario_registrar_salida', meta_id=meta.id) }}" class="btn btn-primary">Registrar Salida</a>
+                    <a href="{{ url_for('usuario_historial', meta_id=meta.id) }}" class="btn btn-primary">Historial</a>
+                    <a href="{{ url_for('usuario_detalle_plan', meta_id=meta.id) }}" class="btn btn-primary">Detalle del Plan</a>
+                    <a href="{{ url_for('usuario_metas') }}" class="btn btn-secondary">Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

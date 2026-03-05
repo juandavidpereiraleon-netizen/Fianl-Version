@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Iniciar Sesión - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="auth-wrapper">
+    <div class="auth-card">
+        <div class="card">
+            <div class="card-header text-center">
+                <h3>Iniciar Sesión</h3>
+            </div>
+            <div class="card-body p-4">
+                <p class="text-center text-muted mb-4">Dios provee, yo administro</p>
+                <form method="POST" action="{{ url_for('login') }}">
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Correo Electrónico</label>
+                        <input type="email" class="form-control w-100" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control w-100" id="password" name="password" required>
+                    </div>
+                    <div class="d-grid gap-3">
+                        <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesión</button>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-lg">Volver</a>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <p>¿No tienes cuenta? <a href="{{ url_for('register') }}">Regístrate aquí</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

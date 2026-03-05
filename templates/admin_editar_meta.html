@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Meta - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card wide-card">
+            <div class="card-header">
+                <h3 class="no-wrap">Editar Meta</h3>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" action="{{ url_for('admin_editar_meta', meta_id=meta.id) }}">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre de la Meta</label>
+                        <input type="text" class="form-control w-100" id="nombre" name="nombre" value="{{ meta.nombre }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="curso" class="form-label">Curso</label>
+                        <select class="form-select w-100" id="curso" name="curso" required>
+                            <option value="">Seleccionar curso</option>
+                            {% for curso in cursos %}
+                            <option value="{{ curso }}" {% if curso == meta.curso %}selected{% endif %}>{{ curso }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_limite" class="form-label">Fecha Límite (DD/MM/AAAA)</label>
+                        <input type="text" class="form-control w-100" id="fecha_limite" name="fecha_limite" value="{{ meta.fecha_limite }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="costo_estimado" class="form-label">Costo Estimado</label>
+                        <input type="number" step="0.01" class="form-control w-100" id="costo_estimado" name="costo_estimado" value="{{ meta.costo_estimado }}" min="0" required>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('admin_metas') }}" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Actualizar Meta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+﻿
+
+{% extends "base.html" %}
+
+{% block title %}Registrar Salida - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card wide-card">
+            <div class="card-header text-center">
+                <h3 class="no-wrap">Registrar Salida</h3>
+            </div>
+            <div class="card-body">
+                <p class="text-center no-wrap"><strong>Meta:</strong> {{ meta.nombre }}</p>
+                <form method="POST" action="{{ url_for('usuario_registrar_salida', meta_id=meta.id) }}">
+                    <div class="mb-3">
+                        <label for="monto" class="form-label">Monto de Salida</label>
+                        <input type="text" class="form-control" id="monto" name="monto" required>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{{ url_for('usuario_meta_detalle', meta_id=meta.id) }}" class="btn btn-secondary">Cancelar</a>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </form>
+                <script>
+                (function() {
+                    const input = document.getElementById('monto');
+                    function formatWithDots(value) {
+                        const num = value.replace(/\D/g, '');
+                        if (!num) return '';
+                        return num.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+                    }
+                    input.addEventListener('input', function(e) {
+                        const caret = input.selectionStart;
+                        const formatted = formatWithDots(input.value);
+                        input.value = formatted;
+                        input.setSelectionRange(caret, caret);
+                    });
+                    input.form && input.form.addEventListener('submit', function(e) {
+                        input.value = input.value.replace(/\./g, '');
+                    });
+                })();
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

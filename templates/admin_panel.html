@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Panel de Administrador - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="text-center mb-4">
+    <h2>Panel de Control Administrador</h2>
+    <p class="text-muted">Gestiona las metas y la administración del sistema</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title text-primary-custom">Metas</h5>
+                <p class="card-text">Gestiona las metas financieras del sistema</p>
+                <a href="{{ url_for('admin_metas') }}" class="btn btn-primary">Gestionar Metas</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title text-primary-custom">Aportes</h5>
+                <p class="card-text">Funcionalidad en desarrollo</p>
+                <button class="btn btn-secondary" disabled>Próximamente</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <h5 class="card-title text-primary-custom">Ascenso</h5>
+                <p class="card-text">Funcionalidad en desarrollo</p>
+                <button class="btn btn-secondary" disabled>Próximamente</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

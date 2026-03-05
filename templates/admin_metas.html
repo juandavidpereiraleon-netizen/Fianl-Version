@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Gestión de Metas - Metafiance{% endblock %}
+
+{% block main_class %}container-main{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Gestión de Metas</h2>
+    <a href="{{ url_for('admin_agregar_meta') }}" class="btn btn-primary">Agregar Meta</a>
+</div>
+
+{% if metas %}
+<div class="table-responsive">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Curso</th>
+                <th>Fecha Límite</th>
+                <th>Costo Estimado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for meta in metas %}
+            <tr>
+                <td>{{ meta.id }}</td>
+                <td>{{ meta.nombre }}</td>
+                <td>{{ meta.curso }}</td>
+                <td>{{ meta.fecha_limite }}</td>
+                <td>${{ meta.costo_estimado|money }}</td>
+                <td>
+                    <a href="{{ url_for('admin_editar_meta', meta_id=meta.id) }}" class="btn btn-sm btn-primary">Editar</a>
+                    <form method="POST" action="{{ url_for('admin_eliminar_meta', meta_id=meta.id) }}" style="display: inline;" onsubmit="return confirm('¿Está seguro de eliminar esta meta?');">
+                        <button type="submit" class="btn btn-sm btn-secondary">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% else %}
+<div class="alert alert-info">
+    No hay metas registradas. <a href="{{ url_for('admin_agregar_meta') }}">Crear primera meta</a>
+</div>
+{% endif %}
+
+<div class="mt-3">
+    <a href="{{ url_for('admin_panel') }}" class="btn btn-secondary">Volver</a>
+</div>
+{% endblock %}
