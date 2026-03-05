@@ -1,0 +1,133 @@
+╔══════════════════════════════════════════════════════════════╗
+║         PASOS PARA CONFIGURAR RENDER.COM                    ║
+╚══════════════════════════════════════════════════════════════╝
+
+PASO 1: CREAR SERVICIO WEB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. En Render (https://dashboard.render.com)
+2. Haz clic en "New +" (arriba a la derecha)
+3. Selecciona "Web Service"
+
+
+PASO 2: CONECTAR REPOSITORIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. En "Connect a repository":
+   - Busca: jazaji1983/Ahorro_Con_Proposito
+   - O haz clic en "Configure account" si no ves tus repos
+2. Selecciona el repositorio "Ahorro_Con_Proposito"
+
+
+PASO 3: CONFIGURACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Render debería detectar Flask automáticamente.
+
+VERIFICA que aparezca:
+- Name: ahorro-con-proposito (o el nombre que prefieras)
+- Environment: Python 3
+- Region: Elige el más cercano
+- Branch: main
+- Build Command: pip install -r requirements.txt
+- Start Command: gunicorn app:app
+
+Si no aparece automáticamente, configura manualmente:
+- Build Command: pip install -r requirements.txt
+- Start Command: gunicorn app:app --bind 0.0.0.0:$PORT
+
+
+PASO 4: VARIABLES DE ENTORNO (Opcional)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Haz clic en "Advanced" y agrega:
+
+SECRET_KEY=genera-una-clave-secreta-muy-larga-aqui
+FLASK_ENV=production
+
+Para generar una clave secreta, ejecuta:
+python -c "import secrets; print(secrets.token_hex(32))"
+
+
+PASO 5: PLAN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+- Selecciona "Free" (plan gratuito)
+- 750 horas gratis al mes (suficiente para 24/7)
+
+
+PASO 6: CREAR SERVICIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Haz clic en "Create Web Service"
+2. Render comenzará a construir tu aplicación
+3. Verás los logs en tiempo real
+4. Esto tomará 2-5 minutos
+
+
+PASO 7: OBTENER URL PERMANENTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cuando veas "Live" en verde, tendrás tu URL:
+
+https://ahorro-con-proposito.onrender.com
+
+(O el nombre que hayas elegido)
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    RESUMEN RÁPIDO                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+1. New + → Web Service
+2. Conecta: Ahorro_Con_Proposito
+3. Verifica configuración (Build/Start commands)
+4. Create Web Service
+5. Espera 2-5 minutos
+6. ¡URL permanente lista!
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ESTADO ACTUAL                             ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ Código subido a GitHub
+✅ Repositorio: https://github.com/jazaji1983/Ahorro_Con_Proposito
+✅ Archivos de configuración listos
+⏳ Siguiente: Configurar en Render
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    URLs PÚBLICAS                            ║
+╚══════════════════════════════════════════════════════════════╝
+
+Una vez desplegado, estas rutas serán públicas:
+
+- https://tu-app.onrender.com/
+- https://tu-app.onrender.com/publico
+- https://tu-app.onrender.com/api/public/info
+- https://tu-app.onrender.com/api/public/estadisticas
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    SEGURIDAD                                ║
+╚══════════════════════════════════════════════════════════════╝
+
+✅ HTTPS automático
+✅ Certificado SSL válido
+✅ Headers de seguridad configurados
+✅ Protección XSS y clickjacking
+
+
+╔══════════════════════════════════════════════════════════════╗
+║                    ACTUALIZACIONES                          ║
+╚══════════════════════════════════════════════════════════════╝
+
+Para actualizar la aplicación:
+
+git add .
+git commit -m "Descripción de cambios"
+git push
+
+Render detectará automáticamente y redesplegará.
+

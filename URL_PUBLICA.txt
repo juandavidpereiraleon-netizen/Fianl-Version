@@ -1,0 +1,30 @@
+╔══════════════════════════════════════════════════════════════╗
+║         METAFIANCE - URL PUBLICA SEGURA                      ║
+╚══════════════════════════════════════════════════════════════╝
+
+Para obtener tu URL pública segura:
+
+1. El panel de ngrok debería estar abierto en tu navegador
+   Si no, abre: http://localhost:4040
+
+2. En el panel de ngrok verás una URL como:
+   https://abc123.ngrok.io
+
+3. Esa es tu URL pública segura con HTTPS
+
+4. Rutas públicas disponibles:
+   - https://tu-url.ngrok.io/
+   - https://tu-url.ngrok.io/publico
+   - https://tu-url.ngrok.io/api/public/info
+   - https://tu-url.ngrok.io/api/public/estadisticas
+
+5. Seguridad activa:
+   ✅ HTTPS encriptado
+   ✅ Certificado SSL válido
+   ✅ Headers de seguridad configurados
+   ✅ Protección XSS
+   ✅ Protección clickjacking
+
+NOTA: Las URLs de ngrok gratuitas cambian cada vez que reinicias.
+Para una URL permanente, considera usar Render.com o Railway.app
+

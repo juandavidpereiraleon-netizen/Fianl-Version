@@ -1,0 +1,112 @@
+╔══════════════════════════════════════════════════════════════╗
+║         METAFIANCE - INSTALACIÓN RÁPIDA DE PYTHON          ║
+╚══════════════════════════════════════════════════════════════╝
+
+PASO 1: INSTALAR PYTHON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Se ha abierto tu navegador en la página de descarga de Python
+   Si no se abrió, ve a: https://www.python.org/downloads/
+
+2. Haz clic en el botón grande "Download Python 3.12.x"
+   (o la versión más reciente que veas)
+
+3. Cuando se descargue el archivo, ábrelo (python-3.12.x-amd64.exe)
+
+4. ⚠️ IMPORTANTE: En la primera pantalla del instalador:
+   ✅ MARCA la casilla "Add Python to PATH"
+   (Esto es CRÍTICO para que funcione)
+
+5. Haz clic en "Install Now"
+
+6. Espera a que termine (puede tardar 2-3 minutos)
+
+7. Cuando veas "Setup was successful", haz clic en "Close"
+
+
+PASO 2: VERIFICAR INSTALACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Cierra TODAS las ventanas de terminal que tengas abiertas
+
+2. Abre una NUEVA ventana de PowerShell o CMD
+
+3. Ejecuta:
+   python --version
+
+4. Deberías ver: Python 3.12.x (o la versión que instalaste)
+
+
+PASO 3: EJECUTAR LA APLICACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Opción A: Usando el script automático (RECOMENDADO)
+─────────────────────────────────────────────────────
+
+1. Navega a la carpeta del proyecto:
+   cd "C:\Users\Familia\Desktop\Familia\JAIRO\NGC"
+
+2. Ejecuta:
+   .\instalar_y_ejecutar.bat
+
+   Este script:
+   - Verificará que Python esté instalado
+   - Instalará las dependencias automáticamente
+   - Iniciará la aplicación
+
+
+Opción B: Manual
+─────────────────────────────────────────────────────
+
+1. Navega a la carpeta del proyecto:
+   cd "C:\Users\Familia\Desktop\Familia\JAIRO\NGC"
+
+2. Instala dependencias:
+   python -m pip install -r requirements.txt
+
+3. Ejecuta la aplicación:
+   python app.py
+
+
+PASO 4: ACCEDER A LA APLICACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cuando veas el mensaje:
+   * Running on http://127.0.0.1:5000
+
+Abre tu navegador y visita:
+   http://localhost:5000
+
+
+CREDENCIALES DE ADMINISTRADOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Email:    admin@metafiance.com
+Password: admin123
+
+
+SOLUCIÓN DE PROBLEMAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Si "python" no funciona después de instalar:
+   → Cierra TODAS las terminales
+   → Abre una NUEVA terminal
+   → Intenta de nuevo
+
+❌ Si sigue sin funcionar:
+   → Reinicia tu computadora
+   → Abre una nueva terminal
+   → Intenta de nuevo
+
+❌ Si el puerto 5000 está ocupado:
+   → Edita app.py (última línea)
+   → Cambia port=5000 a port=8080
+   → Accede a http://localhost:8080
+
+
+¿NECESITAS AYUDA?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Revisa el archivo: INSTALAR_PYTHON.md
+para instrucciones más detalladas.
+
